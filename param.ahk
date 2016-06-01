@@ -10,5 +10,6 @@ ButtonHeight:=ScriptHeight/6
 EditWidth:=ScriptWidth*0.8-2
 EditHeight:=ScriptHeight/6-2
 ;получаение размеров поля с выбранным файлом
-Taskone=Бакунов
+FilePath=%A_desktop%\XML\
+TaskOne:="Бакунов"
 ;Блок отправляющих файлы
