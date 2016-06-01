@@ -4,8 +4,13 @@ gui, add, button, x1 y1 Section w%ButtonWidth% h%ButtonHeight% gChooseFile, &Ф�
 ;ссылка на функцию ChooseFile
 gui, add, edit, x+1 y2 w%EditWidth% h%EditHeight% vSelectedFile, %selectedfile%
 ;выбранный файл
-gui, add, button, x1 ys+%ButtonHeight% w%Buttonwidth% h%ButtonHeight% gUpload, %Taskone%
+gui, add, button, x1 ys+%ButtonHeight% Section w%Buttonwidth% h%ButtonHeight% gUpload, %TaskOne%
 ;кнопки загрузок по фамилиям, возможно будет одна кнопка, которая из серии полисов вырежет агента и поставить нужную базу и т.п.
+loop, files, %FilePath%%TaskOne%\*.*,D
+{
+
+gui, add, button, xs+%ButtonWidth% y%ButtonHeight%+1 w%ButtonWidth% h%ButtonHeight% gOpenDir, %a_loopfilename%
+}
 gui, show, w%ScriptWidth% h%ScriptHeight%
 return
 
@@ -20,4 +25,8 @@ guicontrol,,SelectedFile, %ShortPath%
 return
 
 Upload:
+return
+
+OpenDir:
+run, %FilePath%%TaskOne%\
 return
