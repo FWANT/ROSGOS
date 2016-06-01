@@ -11,9 +11,7 @@ Row:=ButtonHeight*a_index
 gui, add, button, x1 y%Row% Section w%Buttonwidth% h%ButtonHeight% gUpload, %Task%
 ;кнопки загрузок по фамилиям, возможно будет одна кнопка, которая из серии полисов вырежет агента и поставить нужную базу и т.п.
 loop, files, %FilePath%\%Task%\*.*,D
-{
 gui, add, button, xs+%ButtonWidth% y%Row% Section w%ButtonWidth% h%ButtonHeight% gOpenDir, %a_loopfilename%
-}
 }
 gui, show, w%ScriptWidth% h%ScriptHeight%
 return
